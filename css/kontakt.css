@@ -1,0 +1,124 @@
+.contact-section {
+    display: flex;
+    padding: 2rem 10%;
+    justify-content: space-between;
+    align-items: stretch; /* Dette vil sikre at begge boksene er av samme høyde */
+    animation: fadeIn 1s;
+}
+
+.contact-form, .map {
+    flex: 1;
+}
+
+.contact-form {
+    box-shadow: 0 3px 20px rgba(0,0,0,0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #053742;
+    margin-right: 2rem; /* Plass mellom skjemaet og kartet */
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    align-self: flex-end;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    background-color: #dd5f24;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #c84e17;
+}
+
+.map {
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.2);
+}
+
+.about-section {
+    padding: 2rem 10%;
+    text-align: center;
+    animation: fadeIn 1s;
+}
+
+.about-section h2 {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-form, .map {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .map iframe {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-form, .map {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .map iframe {
+        width: 100% !important;
+    }
+}
+
+.city-tabs {
+    display: flex;
+    border-bottom: 2px solid #dd5f24;
+    margin-bottom: 1rem;
+    background-color: #053742;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.tab.active {
+    background: #dd5f24;
+}
+
+.map {
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.2);
+    background-color: #053742;
+}
