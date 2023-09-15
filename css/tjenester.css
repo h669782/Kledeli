@@ -1,0 +1,98 @@
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #053742; /* Sett bakgrunnsfargen her */
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 20px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card h2 {
+    font-weight: 500;
+    color: #f2f5f7; /* Sett teksten hvit slik at den står ut mot den mørke bakgrunnen */
+}
+
+.service-card p {
+    margin-top: 15px;
+    color: #f2f5f7; /* Sett teksten hvit slik at den står ut mot den mørke bakgrunnen */
+}
+
+.price {
+    display: block;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #f2f5f7; /* Sett teksten hvit slik at den står ut mot den mørke bakgrunnen */
+}
+
+.service-card button {
+    padding: 10px 15px;
+    background-color: #021b20; /* Bakgrunnsfarge for knappen */
+    color: #f2f5f7; /* Tekstfarge for knappen */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.service-card button:hover {
+    background-color: #dd5f24; /* Hover bakgrunnsfarge for knappen */
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: 2rem;
+    color: #f2f5f7;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.testimonial-card {
+    padding: 2rem;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 20px;
+    background-color: #053742;
+}
+
+.testimonial-text {
+    font-style: italic;
+}
+
+.stars {
+    margin-top: 15px;
+}
+
+.star {
+    color: #dd5f24;
+    margin-right: 5px;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
