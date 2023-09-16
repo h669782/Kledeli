@@ -1,0 +1,34 @@
+.about-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about-intro img {
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.about-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-history, .about-values {
+    padding: 2rem 4rem;
+    background-color: rgba(5, 55, 66, 0.2);
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+.about-values ul {
+    padding-left: 2rem;
+}
+
+.about-values li {
+    margin-bottom: 1rem;
+}
+
