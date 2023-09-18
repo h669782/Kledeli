@@ -12,6 +12,14 @@ body{
 
 }
 
+.mainContent {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
 nav{
     height: 6rem;
     width: 100vw;
