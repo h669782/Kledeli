@@ -101,6 +101,7 @@
     border-bottom: 2px solid #dd5f24;
     margin-bottom: 1rem;
     background-color: #053742;
+    list-style-type: none;
 }
 
 .tab {
