@@ -54,41 +54,6 @@
     background-color: #dd5f24; /* Hover bakgrunnsfarge for knappen */
 }
 
-/* Testimonials Section */
-.testimonials {
-    text-align: center;
-    padding: 2rem;
-    color: #f2f5f7;
-}
-
-.testimonial-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.testimonial-card {
-    padding: 2rem;
-    border-radius: 5px;
-    max-width: 300px;
-    margin: 20px;
-    background-color: #053742;
-}
-
-.testimonial-text {
-    font-style: italic;
-}
-
-.stars {
-    margin-top: 15px;
-}
-
-.star {
-    color: #dd5f24;
-    margin-right: 5px;
-}
-
 /* Responsive adjustment for smaller screens */
 @media (max-width: 768px) {
     .testimonial-cards {

@@ -24,8 +24,9 @@
 }
 
 
-#mainContent {
+.mainContent {
     margin-top: 2rem; /* Legger til 2rem avstand på toppen */
+    width: 100%;
 }
 
 
