@@ -22,14 +22,14 @@ loginButton.addEventListener('click', () => {
     modal.style.display = "block";
     setTimeout(() => {
         document.querySelector(".modal-content").style.transform = "scale(1)";
-    }, 100);  // Use a slight delay to ensure modal is rendered before transforming
+    }, 100);
 });
 
 closeButton.addEventListener('click', () => {
     document.querySelector(".modal-content").style.transform = "scale(0)";
     setTimeout(() => {
         modal.style.display = "none";
-    }, 400);  // Match the duration of the transform transition in the CSS
+    }, 400);
 });
 
 window.addEventListener('click', (event) => {
@@ -37,7 +37,7 @@ window.addEventListener('click', (event) => {
         document.querySelector(".modal-content").style.transform = "scale(0)";
         setTimeout(() => {
             modal.style.display = "none";
-        }, 400);  // Match the duration of the transform transition in the CSS
+        }, 400); 
     }
 });
 

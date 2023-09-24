@@ -12,7 +12,33 @@
 
 .slide {
     display: none;
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
+
+
+
+    @media (max-width: 768px) {
+        .slideshow-container {
+            width: 100%;
+        }
+    
+        .boxes-container {
+            flex-direction: column;
+        }
+    
+        .slide {
+            height: 200px;
+        }
+    }
+
+    .slide img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    
 
 .nav-links {
     list-style-type: none;
