@@ -1,4 +1,4 @@
-/* Services Section */
+
 .services {
     text-align: center;
     padding: 50px 0;
@@ -11,7 +11,7 @@
 }
 
 .service-card {
-    background-color: #053742; /* Sett bakgrunnsfargen her */
+    background-color: #053742; 
     padding: 2rem;
     border-radius: 10px;
     max-width: 300px;
@@ -25,25 +25,25 @@
 
 .service-card h2 {
     font-weight: 500;
-    color: #f2f5f7; /* Sett teksten hvit slik at den står ut mot den mørke bakgrunnen */
+    color: #f2f5f7; 
 }
 
 .service-card p {
     margin-top: 15px;
-    color: #f2f5f7; /* Sett teksten hvit slik at den står ut mot den mørke bakgrunnen */
+    color: #f2f5f7;
 }
 
 .price {
     display: block;
     font-size: 1.5rem;
     margin: 20px 0;
-    color: #f2f5f7; /* Sett teksten hvit slik at den står ut mot den mørke bakgrunnen */
+    color: #f2f5f7;
 }
 
 .service-card button {
     padding: 10px 15px;
-    background-color: #021b20; /* Bakgrunnsfarge for knappen */
-    color: #f2f5f7; /* Tekstfarge for knappen */
+    background-color: #021b20; 
+    color: #f2f5f7; 
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -51,13 +51,41 @@
 }
 
 .service-card button:hover {
-    background-color: #dd5f24; /* Hover bakgrunnsfarge for knappen */
+    background-color: #EE9520;
+    color: black;
 }
 
-/* Responsive adjustment for smaller screens */
 @media (max-width: 768px) {
     .testimonial-cards {
         flex-direction: column;
         align-items: center;
     }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mainContent {
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+.about-section {
+    padding: 2rem 10%;
+    text-align: center;
+}
+
+.about-section h2 {
+    margin-bottom: 1rem;
 }

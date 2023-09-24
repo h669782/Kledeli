@@ -2,8 +2,7 @@
     display: flex;
     padding: 2rem 10%;
     justify-content: space-between;
-    align-items: stretch; /* Dette vil sikre at begge boksene er av samme høyde */
-    animation: fadeIn 1s;
+    align-items: stretch;
 }
 
 .contact-form, .map {
@@ -15,7 +14,7 @@
     padding: 2rem;
     border-radius: 10px;
     background-color: #053742;
-    margin-right: 2rem; /* Plass mellom skjemaet og kartet */
+    margin-right: 2rem;
 }
 
 .contact-form h2 {
@@ -39,14 +38,15 @@
     align-self: flex-end;
     cursor: pointer;
     padding: 0.6rem 1rem;
-    background-color: #dd5f24;
+    background-color: #EE9520;
+    color: black;
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
-    background-color: #c84e17;
+    background-color: #EE9520;
 }
 
 .map {
@@ -59,7 +59,6 @@
 .about-section {
     padding: 2rem 10%;
     text-align: center;
-    animation: fadeIn 1s;
 }
 
 .about-section h2 {
@@ -98,10 +97,11 @@
 
 .city-tabs {
     display: flex;
-    border-bottom: 2px solid #dd5f24;
+    border-bottom: 2px solid #EE9520;
     margin-bottom: 1rem;
     background-color: #053742;
     list-style-type: none;
+    
 }
 
 .tab {
@@ -110,10 +110,12 @@
     flex-grow: 1;
     text-align: center;
     transition: background 0.3s;
+    color: white;
 }
 
 .tab.active {
-    background: #dd5f24;
+    background: #EE9520;
+    color: black;
 }
 
 .map {
@@ -122,4 +124,22 @@
     border-radius: 10px;
     box-shadow: 0 3px 20px rgba(0,0,0,0.2);
     background-color: #053742;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mainContent {
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 0.2s;
 }

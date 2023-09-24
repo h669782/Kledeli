@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kledeli</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/landingsside.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
     <nav>
         <div class="logo">
-            <a href="index.html"><img decoding="async" src="images/logo.png" alt="Logo"></a>
+            <a href="../index.html"><h1>Kledeli</h1></a>
         </div>
         <div class="hamburger">
             <div class="bars1"></div>
@@ -33,8 +34,10 @@
             <h2>Logg Inn</h2>
             <h2>Work-in-progress</h2>
             <form>
-                <input type="text" placeholder="Brukernavn" required>
-                <input type="password" placeholder="Passord" required>
+                <label for="brukernavn">Brukernavn</label>
+                <input type="text" placeholder="Brukernavn" id="brukernavn" required>
+                <label for="passord">Passord</label>
+                <input type="password" placeholder="Passord" id="passord" required>
                 <button type="submit">Logg Inn</button>
             </form>
         </div>
@@ -42,19 +45,48 @@
 
 
 <div class="mainContent">
-   
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="https://via.placeholder.com/1000x500.png?text=Kledeli+1" alt="Slide 1">
+        </div>
+        <div class="slide fade">
+            <img src="https://via.placeholder.com/1000x500.png?text=Kledeli+2" alt="Slide 2">
+        </div>
+        <div class="slide fade">
+            <img src="https://via.placeholder.com/1000x500.png?text=Kledeli+3" alt="Slide 3">
+        </div>
+    </div>
+
+    <div class="intro-text">
+        <p>Ved Kledeli er vi drevet av en lidenskap for mote, kvalitet og kundetilfredshet. Vi startet vår reise i 2023 med målet om å bringe unike og stilfulle klær til våre kunder. Vi fokuserer på bærekraft, kvalitet og tidløs stil. Uansett hva du leter etter, har vi noe for alle stiler og anledninger.</p>
+    </div>
+
+    <div class="boxes-container">
+        <a href="pages/klear.html" class="box">
+            <i class="fa fa-shopping-bag"></i>
+            <p>Klær</p>
+        </a>
+        <a href="pages/tjenester.html" class="box">
+            <i class="fa fa-star"></i>
+            <p>Tjenester</p>
+        </a>
+        <a href="pages/kontakt.html" class="box">
+            <i class="fa fa-envelope"></i>
+            <p>Kontakt Oss</p>
+        </a>
+    </div>
 </div>
 <footer>
     <div class="footer-content">
         <p>Kledeli © 2023. Alle rettigheter reservert.</p>
         <div class="social-media">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-instagram"></a>
+            <a href="https://www.facebook.com/" class="fa fa-facebook"> Facebook</a>
+            <a href="https://twitter.com/" class="fa fa-twitter"> Twitter</a>
+            <a href="https://www.instagram.com/" class="fa fa-instagram"> Instagram</a>
         </div>
     </div>
 </footer>
-    
+<script src="javascript/landingsside.js"></script>
     <script src="javascript/scripts.js"></script>
   </body>
 </html>
