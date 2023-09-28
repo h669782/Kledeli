@@ -12,12 +12,21 @@ document.addEventListener('DOMContentLoaded', function() {
         tittelElement.textContent = 'Du har valgt ' + tjeneste;
     } else {
         if(containerElement){
-            containerElement.innerHTML = '<p>Vennligst vvelg en gyldig tjeneste:</p>'
+            containerElement.innerHTML = '<p>Vennligst velg en gyldig tjeneste:</p>'
         
 
             gyldigeTjenester.forEach(function(tjenesteNavn){
                 const btn = document.createElement('button');
                 btn.textContent = tjenesteNavn;
+
+                btn.style.padding = '10px 15px';
+                btn.style.backgroundColor = '#053742';
+                btn.style.color = '#f2f5f7';
+                btn.style.border = 'none';
+                btn.style.borderRadius = '5px';
+                btn.style.cursor = 'pointer';
+                btn.style.margin = '5px';
+
                 btn.addEventListener('click', function (){
                     window.location.href = 'registrering.html?tjeneste=' + tjenesteNavn;
                 })
