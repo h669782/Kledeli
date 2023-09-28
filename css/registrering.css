@@ -1,14 +1,88 @@
-.button {
-    padding: 10px 15px;
-    background-color: #021b20; 
-    color: #f2f5f7; 
-    border: none;
-    border-radius: 3px;
+
+.registrationSteps {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.step {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #053742;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.button:hover {
+.step p {
+    margin-top: 0.5rem;
+}
+
+.step i {
+    font-size: 2rem;
+}
+
+.active-step {
+    background-color: #EE9520;
+}
+
+.active-step p,
+.active-step i {
+    color: #000;
+}
+
+.registrationForm {
+    background-color: #053742;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.form-step {
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.nextBtn, .prevBtn, .submitBtn {
+    padding: 10px;
+    background-color: #EE9520;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.nextBtn:hover, .prevBtn:hover, .submitBtn:hover {
+    background-color: #EE9520;
+}
+
+
+.packages {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.package-box {
+    background-color: #053742;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + .package-box {
     background-color: #EE9520;
     color: black;
+}
+
+.package-box:hover {
+    transform: scale(1.05);
 }

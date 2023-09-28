@@ -46,6 +46,84 @@
     <div class="mainContent">
         <h2 id="tjenesteTittel">Velg en tjeneste</h2>
         <div id="container"></div>
+        <div class="registrationSteps">
+            <div id="step1" class="step active-step">
+                <i class="fa fa-box"></i>
+                <p>Pakkeinformasjon</p>
+            </div>
+            <div id="step2" class="step">
+                <i class="fa fa-user"></i>
+                <p>Personopplysninger</p>
+            </div>
+            <div id="step3" class="step">
+                <i class="fa fa-credit-card"></i>
+                <p>Betalingsmetode</p>
+            </div>
+            <div id="step4" class="step">
+                <i class="fa fa-check"></i>
+                <p>Bekreftelse</p>
+            </div>
+        </div>
+        
+        <div class="registrationForm">
+            <div id="formStep1" class="form-step">
+                <label for="packageType">Velg Pakke:</label>
+                <div class="packages">
+                    <label>
+                        <input type="radio" name="packageType" value="3-Plagg" />
+                        <div class="package-box">3-Plagg Pakke</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="packageType" value="5-Plagg" />
+                        <div class="package-box">5-Plagg Pakke</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="packageType" value="8-Plagg" />
+                        <div class="package-box">8-Plagg Pakke</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="packageType" value="10-Plagg" />
+                        <div class="package-box">10-Plagg Pakke</div>
+                    </label>
+                </div>
+                <button id="next1" class="nextBtn">Neste</button>
+            </div>
+            
+            
+            
+            <div id="formStep2" class="form-step hidden">
+                <!-- Personopplysninger Skjema -->
+                <label for="fullName">Fullt Navn:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                
+                <label for="email">E-post:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button id="prev1" class="prevBtn">Forrige</button>
+                <button id="next2" class="nextBtn">Neste</button>
+            </div>
+            
+            <div id="formStep3" class="form-step hidden">
+                <!-- Betalingsmetode Skjema -->
+                <label for="cardNumber">Kortnummer:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+                
+                <label for="expiryDate">Utløpsdato:</label>
+                <input type="text" id="expiryDate" name="expiryDate" required>
+                
+                <button id="prev2" class="prevBtn">Forrige</button>
+                <button id="next3" class="nextBtn">Neste</button>
+            </div>
+            
+            <div id="formStep4" class="form-step hidden">
+                <!-- Bekreftelse Skjema -->
+                <p>Vennligst bekreft informasjonen og klikk på "Bekreft"</p>
+                <button id="prev3" class="prevBtn">Forrige</button>
+                <button id="submit" class="submitBtn">Bekreft</button>
+            </div>
+        </div>
+        
+        
     </div>
 
     <footer>
