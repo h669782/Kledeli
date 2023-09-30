@@ -7,12 +7,17 @@
 }
 
 .step {
+    flex: 1;
     text-align: center;
     padding: 1rem;
     border-radius: 8px;
     background-color: #053742;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.step:not(:last-child) {
+    margin-right: 20px;  /* Tilpass denne verdien etter behov */
 }
 
 .step p {
@@ -67,7 +72,7 @@
 }
 
 .package-box {
-    background-color: #053742;
+    background-color: #021b20;
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;
@@ -85,4 +90,64 @@ input[type="radio"]:checked + .package-box {
 
 .package-box:hover {
     transform: scale(1.05);
+    background-color: #EE9520;
+    color: black;
 }
+
+.personal-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 40px;  /* justert for mer mellomrom mellom feltene på samme linje */
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Om du ønsker ekstra plass under hver rad */
+}
+
+.input-group {
+    flex: 1; /* Gjør at hvert element innenfor .input-row tar lik bredde */
+    margin: 0 25px; /* Gir litt mellomrom mellom inputfeltene */
+}
+
+/* Om du vil at det første og siste elementet ikke skal ha ekstra margin kan du bruke følgende: */
+.input-row .input-group:first-child {
+    margin-left: 0;
+}
+
+.input-row .input-group:last-child {
+    margin-right: 0;
+}
+
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    color: black;
+    font-size: 14px;
+}
+
+.nextBtn, .prevBtn, .submitBtn {
+    background-color: #EE9520;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nextBtn:hover, .prevBtn:hover, .submitBtn:hover {
+    background-color: #cc7a1a;
+}
+

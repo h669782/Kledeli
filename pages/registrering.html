@@ -6,7 +6,8 @@
     <title>Kledeli</title>
     <link rel="stylesheet" href="../css/registrering.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 <body>
@@ -92,15 +93,51 @@
             
             
             <div id="formStep2" class="form-step hidden">
-                <!-- Personopplysninger Skjema -->
-                <label for="fullName">Fullt Navn:</label>
-                <input type="text" id="fullName" name="fullName" required>
+                    <!-- Personopplysninger Skjema -->
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="firstName">Fornavn</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Fornavn" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lastName">Etternavn</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Etternavn" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="birthDate">Fødselsdato</label>
+                            <input type="date" id="birthDate" name="birthDate" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">E-post</label>
+                            <input type="email" id="email" name="email" placeholder="E-post" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Telefon" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="address">Addresse</label>
+                            <input type="text" id="address" name="address" placeholder="Addresse" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="postalCode">Postnummer</label>
+                            <input type="number" id="postalCode" name="postalCode" placeholder="Postnummer" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="city">Poststed</label>
+                            <input type="text" id="city" name="city" placeholder="Poststed" required>
+                        </div>
+                    </div>
+                    <button id="prev1" class="prevBtn">Forrige</button>
+                    <button id="next2" class="nextBtn">Neste</button>
+
                 
-                <label for="email">E-post:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <button id="prev1" class="prevBtn">Forrige</button>
-                <button id="next2" class="nextBtn">Neste</button>
             </div>
             
             <div id="formStep3" class="form-step hidden">
