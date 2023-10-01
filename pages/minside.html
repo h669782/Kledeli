@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kledeli</title>
-    <link rel="stylesheet" href="../css/oss.css">
+    
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
@@ -35,7 +35,7 @@
             <span class="close">&times;</span>
             <h2>Logg Inn</h2>
             <h2>Work-in-progress</h2>
-            <form>
+            <form onsubmit="handleLogin(); return false;">
                 <label for="brukernavn">Brukernavn</label>
                 <input type="text" placeholder="Brukernavn" id="brukernavn" required>
                 <label for="passord">Passord</label>
@@ -44,41 +44,42 @@
             </form>
         </div>
     </div>
-
     <div class="mainContent">
-        <div class="text-card">
-            <h1>Om Oss</h1>
-            <p>Ved Kledeli er vi drevet av en lidenskap for mote, kvalitet og kundetilfredshet. Vi startet vår reise i 2023 med målet om å bringe unike og stilfulle klær til våre kunder. Vi fokuserer på bærekraft, kvalitet og tidløs stil. Uansett hva du leter etter, har vi noe for alle stiler og anledninger.</p>
-        </div>
-        
-        <div class="text-card">
-            <h2>Vår Visjon</h2>
-            <p>Vår visjon er å inspirere individuell stil og hjelpe våre kunder å uttrykke seg gjennom vår unike kolleksjon. Vi streber etter å være et moteikon og gå foran med gode eksempler ved å fremme bærekraft og etisk produksjon.</p>
-        </div>
-        
-        <div class="text-card">
-            <h2>Våre Verdier</h2>
-            <ul>
-                <li><strong>Kvalitet:</strong> Vi garanterer høykvalitetsprodukter med langvarig verdi.</li>
-                <li><strong>Bærekraft:</strong> Vi arbeider for en grønnere, renere og mer rettferdig fremtid.</li>
-                <li><strong>Kundetilfredshet:</strong> Vi setter våre kunder først og strever for overlegen kundeservice.</li>
-            </ul>
-        </div>
-    </div>
+    <!-- User confirmation and logout section -->
+    <section class="user-section">
+        <p>Du er nå innlogget!</p>
+        <button onclick="logout()">Logg ut</button>
+    </section>
+</div>
+<script src="../javascript/firebaseInit.js"></script>
+    <script>
+
+
+        // Logout function using Firebase auth
+        function logout() {
+            firebase.auth().signOut().then(() => {
+                window.location.href = "../index.html";
+            }).catch((error) => {
+                console.error('Error logging out: ', error);
+            });
+        }
+
+
+        // Function to check if user is logged in
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+        document.querySelector('.user-section').style.display = 'block';  // Show user section
+    } else {
+        // No user is signed in.
+        document.querySelector('.user-section').style.display = 'none';   // Hide user section
+        window.location.href = "../index.html";  // Optionally, redirect to home page or login page
+    }
+});
+    </script>
     
-    <footer>
-        <div class="footer-content">
-            <p>Kledeli © 2023. Alle rettigheter reservert.</p>
-            <div class="social-media">
-                <a href="https://www.facebook.com/" class="fa fa-facebook"> Facebook</a>
-                <a href="https://twitter.com/" class="fa fa-twitter"> Twitter</a>
-                <a href="https://www.instagram.com/" class="fa fa-instagram"> Instagram</a>
-            </div>
-        </div>
-    </footer>
-    <script src="../javascript/firebaseInit.js"></script>
+    <script src="../javascript/firebaseUser.js"></script>
     <script src="../javascript/firebaseAuth.js"></script>
-    <script src="../javascript/oss.js"></script>
     <script src="../javascript/scripts.js"></script>
-  </body>
+</body>
 </html>

@@ -1,3 +1,8 @@
+.mainContent {
+    width: 80%;
+    margin: 0 auto; /* Dette vil sentrere .mainContent horisontalt */
+}
+
 
 .registrationSteps {
     display: flex;
@@ -67,16 +72,24 @@
 
 .packages {
     display: flex;
-    justify-content: space-around;
     margin: 20px 0;
 }
 
 .package-box {
+    margin: 0 10px; /* Legger til 10px margin til høyre og venstre */
     background-color: #021b20;
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+.packages label:first-child .package-box {
+    margin-left: 0;
+}
+
+.packages label:last-child .package-box {
+    margin-right: 0;
 }
 
 input[type="radio"] {
@@ -93,6 +106,17 @@ input[type="radio"]:checked + .package-box {
     background-color: #EE9520;
     color: black;
 }
+
+.package-description {
+    font-size: 12px;
+    margin-top: 8px;
+    color: #aaa;  /* Lysere farge for beskrivelsen */
+}
+input:focus {
+    border: 2px solid #EE9520;
+    box-shadow: 0 0 5px rgba(238, 149, 32, 0.5); /* Gir en svak skygge rundt input når den er fokusert */
+}
+
 
 .personal-info {
     display: grid;
@@ -151,3 +175,110 @@ input[type="radio"]:checked + .package-box {
     background-color: #cc7a1a;
 }
 
+/* Mobilvisning */
+@media (max-width: 768px) {
+    .registrationSteps {
+        flex-direction: column;
+    }
+    
+    .step:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .packages {
+        flex-direction: column;
+    }
+
+    .package-box {
+        margin: 10px 0;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-group {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.payment-box {
+    margin: 0 10px; 
+    background-color: #021b20;
+    padding: 20px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Legg til følgende linjer */
+    width: 150px;  /* eller en hvilken som helst annen passende verdi */
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Sentrerer innholdet horisontalt */
+    justify-content: center; /* Sentrerer innholdet vertikalt */
+}
+
+.payment-icon {
+    width: 130px; /* eller en hvilken som helst annen passende verdi */
+    height: auto; /* holder bildets proporsjon */
+    margin-bottom: 10px; /* gir litt plass mellom bildet og teksten */
+}
+
+
+.payment-options label:first-child .payment-box {
+    margin-left: 0;
+}
+
+.payment-options label:last-child .payment-box {
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .packages, .payment-options {
+        flex-direction: column;
+    }
+
+    .package-box, .payment-box {
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+
+.payment-box:hover {
+    transform: scale(1.05);
+    background-color: #EE9520;
+    color: black;
+}
+
+
+
+
+input[type="radio"]:checked + .payment-box {
+    background-color: #EE9520;
+    color: black;
+}
+
+.confirmation-details {
+    background-color: #021b20;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.confirmation-details h4 {
+    margin-top: 1rem;
+    color: #EE9520;
+}
+
+.confirmation-details p {
+    margin: 0.5rem 0;
+}

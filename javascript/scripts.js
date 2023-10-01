@@ -41,3 +41,36 @@ window.addEventListener('click', (event) => {
     }
 });
 
+function handleLogin() {
+    var email = document.getElementById("brukernavn").value;
+    var password = document.getElementById("passord").value;
+
+    loginUser(email, password);
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // Bruker er logget inn
+        loginButton.innerText = "Min Side";
+        loginButton.removeEventListener('click', openLoginModal);
+        loginButton.addEventListener('click', () => {
+            if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+                window.location.href = "pages/minside.html";
+            } else {
+                window.location.href = "minside.html";
+            }
+        });
+    } else {
+        // Bruker er logget ut
+        loginButton.innerText = "Logg Inn";
+        loginButton.removeEventListener('click', openLoginModal);
+        loginButton.addEventListener('click', openLoginModal);
+    }
+});
+
+function openLoginModal() {
+    modal.style.display = "block";
+    setTimeout(() => {
+        document.querySelector(".modal-content").style.transform = "scale(1)";
+    }, 100);
+}

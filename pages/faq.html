@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../css/faq.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </head>
 <body>
     <nav>
@@ -32,7 +36,7 @@
             <span class="close">&times;</span>
             <h2>Logg Inn</h2>
             <h2>Work-in-progress</h2>
-            <form>
+            <form onsubmit="handleLogin(); return false;">
                 <label for="brukernavn">Brukernavn</label>
                 <input type="text" placeholder="Brukernavn" id="brukernavn" required>
                 <label for="passord">Passord</label>
@@ -93,7 +97,8 @@
             </div>
         </div>
     </footer>
-    
+    <script src="../javascript/firebaseInit.js"></script>
+    <script src="../javascript/firebaseAuth.js"></script>
     <script src="../javascript/faq.js"></script>
     <script src="../javascript/scripts.js"></script>
   </body>
