@@ -87,15 +87,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
         registerUser(email, password)
             .then((userCredential) => {
-                // Suksess. Du kan f.eks. redirecte brukeren til en takkeside her.
-                alert("Registrering vellykket!");
-                window.location.href = "minside.html";
+                const user = userCredential.user;
+    
+                // Legger til brukerdata i Firestore
+                const db = firebase.firestore();
+                db.collection('users').doc(user.uid).set({
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    birthDate: document.getElementById('birthDate').value,
+                    email: email,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value,
+                    postalCode: document.getElementById('postalCode').value,
+                    city: document.getElementById('city').value,
+                    packageType: document.querySelector('input[name="packageType"]:checked').value,
+                    paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value
+                })
+                .then(() => {
+                    alert("Registrering vellykket!");
+                    window.location.href = "minside.html";
+                })
+                .catch((error) => {
+                    console.error("Feil ved lagring i Firestore: ", error);
+                    alert("Det oppstod en feil under registrering.");
+                });
             })
             .catch((error) => {
-                console.error("Feil ved registrering:", error);
-                alert("Feil ved registrering: " + error.message);
+                console.error("Feil ved registrering: ", error);
+                alert("Det oppstod en feil under registrering.");
             });
     }
+    
     
 
 
