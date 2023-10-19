@@ -55,7 +55,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         loginButton.removeEventListener('click', openLoginModal);
         loginButton.addEventListener('click', () => {
             if (window.location.pathname.includes("/index.html") || window.location.pathname === "/") {
-                window.location.href = "pages/minside.html";
+                window.location.href = "./pages/minside.html";
             } else {
                 window.location.href = "minside.html";
             }

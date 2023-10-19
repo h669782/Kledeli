@@ -6,10 +6,12 @@
     <title>Kledeli</title>
     
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/minside.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 </head>
 <body>
     <nav>
@@ -45,41 +47,57 @@
         </div>
     </div>
     <div class="mainContent">
-    <!-- User confirmation and logout section -->
-    <section class="user-section">
-        <p>Du er nå innlogget!</p>
+        <h2 id="userGreeting">Hei, [firstName]!</h2>
+        <div class="subscriptionBox">
+            <h3>Ditt abonnement</h3>
+            <p id="userPackageType">[packageType]</p>
+            <button id="changeSubscription">Endre abonnement</button>
+            <button id="cancelSubscription">Kanseller abonnement</button>
+        </div>
+        <button id="changeAccountInfo">Endre kontoopplysninger</button>
         <button onclick="logout()">Logg ut</button>
-    </section>
-</div>
-<script src="../javascript/firebaseInit.js"></script>
+
+    </div>
+    <script src="../javascript/firebaseInit.js"></script>
+    <script src="../javascript/firebaseUser.js"></script>
+    <script src="../javascript/firebaseAuth.js"></script>
+    <script src="../javascript/scripts.js"></script>
     <script>
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in
+        var userId = user.uid;
 
+        // Get user's data from Firestore
+        firebase.firestore().collection("users").doc(userId).get().then((doc) => {
+            if (doc.exists) {
+                let userData = doc.data();
+                
+                // Update HTML elements with user data
+                document.getElementById("userGreeting").textContent = "Hei, " + userData.firstName + "!";
+                document.getElementById("userPackageType").textContent = userData.packageType;
+                
+                // You can also handle the event listeners for 'changeSubscription' and 'cancelSubscription' buttons here
+                
+            } else {
+                console.log("No such user!");
+            }
+        }).catch((error) => {
+            console.log("Error getting user data:", error);
+        });
+    } else {
+        // User is signed out
+        window.location.href = "../index.html";
+    }});
 
-        // Logout function using Firebase auth
-        function logout() {
+    function logout() {
             firebase.auth().signOut().then(() => {
                 window.location.href = "../index.html";
             }).catch((error) => {
                 console.error('Error logging out: ', error);
             });
         }
-
-
-        // Function to check if user is logged in
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        // User is signed in.
-        document.querySelector('.user-section').style.display = 'block';  // Show user section
-    } else {
-        // No user is signed in.
-        document.querySelector('.user-section').style.display = 'none';   // Hide user section
-        window.location.href = "../index.html";  // Optionally, redirect to home page or login page
-    }
-});
     </script>
     
-    <script src="../javascript/firebaseUser.js"></script>
-    <script src="../javascript/firebaseAuth.js"></script>
-    <script src="../javascript/scripts.js"></script>
 </body>
 </html>
